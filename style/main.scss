@@ -1,1 +1,18 @@
-.whatever { background-color: red; }
+html { height: 100%; }
+body, .container {
+  margin: 0;
+  height: 100%;
+}
+
+.add {
+  height: 100%;
+}
+
+.sidebar {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: gray;
+}
