@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import Engagement from './engagement';
+import Form from './form'
 import { get_blocks } from '../actions/index'
 
 class Add extends Component {
@@ -21,7 +22,7 @@ class Add extends Component {
           }
         </div>
         <div>
-          Create next block
+          <Form />
         </div>
       </div>
     )
