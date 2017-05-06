@@ -2,7 +2,7 @@ export const SET_ENGAGMENT = 'SET_ENGAGMENT';
 
 export const fetchEngagement = function() {
   return function() {
-    return { action: SET_ENGAGMENT };
+    return { type: SET_ENGAGMENT };
   }
 };
 
