@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
+import { connect } from 'react-redux';
 
-export default class App extends Component {
+import { setUsername as set } from '../reducers/username';
+
+export class Home extends Component {
+  componentWillMount() {
+    const username = prompt('Username')
+    this.props.setUsername(username)
+  }
+
   render() {
     return (
       <div>
@@ -15,3 +23,13 @@ export default class App extends Component {
     );
   }
 }
+
+function mapStateToProps(state, props) {
+  return {};
+}
+
+function mapDispatchToProps(dispatch) {
+  return { setUsername(name) { dispatch(set(name)) } };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
