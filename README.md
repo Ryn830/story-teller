@@ -1,2 +1,2 @@
-# story-teller
-A platform for generating stories.
+# Story-Teller
+A platform for story tellers.
