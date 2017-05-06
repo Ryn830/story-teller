@@ -5,25 +5,27 @@ import { bindActionCreators } from 'redux'
 
 import Engagement from './engagement';
 import Form from './form'
+import Sidebar from './sidebar';
 import { get_blocks } from '../actions/index'
 
 class Add extends Component {
   render() {
     return (
-      <div>
+      <div className="add">
         <Link to='/'>
           Home
         </Link>
         <div>
           {
             this.props.blocks.map((block, index) => {
-              return <span key={ index }>{ block.text }</span>
+              return <div key={ index }>{ block.text }</div>
             })
           }
         </div>
         <div>
           <Form />
         </div>
+        <Sidebar />
       </div>
     )
   }
