@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import Engagement from './engagement';
+import { get_blocks } from '../actions/index'
 
 class Add extends Component {
   render() {
@@ -13,14 +14,30 @@ class Add extends Component {
           Home
         </Link>
         <div>
-          Story content
+          {
+            this.props.blocks.map((block, index) => {
+              return <span key={ index }>{ block.text }</span>
+            })
+          }
         </div>
         <div>
           Create next block
         </div>
       </div>
-    );
+    )
+  }
+  componentDidMount () {
+    this.props.get_blocks()
   }
 }
 
-export default connect()(Add)
+export default connect(
+  (state) => {
+    return {
+      blocks: state.blocks
+    }
+  },
+  (dispatch) => {
+    return bindActionCreators({ get_blocks }, dispatch)
+  }
+)(Add)
