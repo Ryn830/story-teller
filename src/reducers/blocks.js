@@ -5,7 +5,7 @@ import * as types from '../types'
 export default function (state = [], action) {
   switch (action.type) {
     case types.GET_BLOCKS:
-      return [{ block: start }]
+      return [{ text: start }]
   }
   return state
 }

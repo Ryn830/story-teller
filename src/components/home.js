@@ -6,8 +6,9 @@ import { setUsername as set } from '../reducers/username';
 
 export class Home extends Component {
   componentWillMount() {
-    const username = prompt('Username')
-    this.props.setUsername(username)
+    // TODO: Turn this back on later
+    // const username = prompt('Username')
+    // this.props.setUsername(username)
   }
 
   render() {
