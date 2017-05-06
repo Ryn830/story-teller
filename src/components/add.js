@@ -1,14 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-export default class Add extends Component {
+class Add extends Component {
   render() {
     return (
       <div>
         <Link to='/'>
           Home
         </Link>
+        <div>
+          Story content
+        </div>
+        <div>
+          Create next block
+        </div>
       </div>
     );
   }
 }
+
+export default connect()(Add)
