@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import Engagement from './engagement';
+
 class Add extends Component {
   render() {
     return (
