@@ -23,7 +23,7 @@ class Add extends Component {
         <div className="story">
           {
             this.props.blocks.map((block, index) => {
-              return <Block key={ index } text={ block.text }/>
+              return <Block key={ index } text={ block.text } username={ this.props.username }/>
             })
           }
         </div>
@@ -41,7 +41,8 @@ class Add extends Component {
 export default connect(
   (state) => {
     return {
-      blocks: state.blocks
+      blocks: state.blocks,
+      username: state.username
     }
   },
   (dispatch) => {

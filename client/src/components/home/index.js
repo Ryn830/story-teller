@@ -11,7 +11,6 @@ import './home.scss';
 export class Home extends Component {
   componentWillMount() {
     // $.post({
-    //   type: 'POST',
     //   url: 'shareVote',
     //   dataType: 'json',
     //   contentType: 'application/json',
@@ -19,6 +18,8 @@ export class Home extends Component {
     //     campaignName: 'scott',
     //     emails: ['patientreferrals2@gmail.com']
     //   })});
+
+    $.get({url: 'commentMetrics', dataType: 'json', contentType: 'application/json'})
 
     // TODO: Turn this back on later
     // const username = prompt('Username')
