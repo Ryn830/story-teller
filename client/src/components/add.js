@@ -14,7 +14,7 @@ import './add.scss';
 class Add extends Component {
   render() {
     return (
-      <div className="add">
+      <div className="page-container add">
         <Link to='/'>
           Home
         </Link>

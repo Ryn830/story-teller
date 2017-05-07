@@ -10,7 +10,15 @@ import './home.scss';
 
 export class Home extends Component {
   componentWillMount() {
-    // $.ajax({type: 'POST', url: 'shareVote'});
+    // $.post({
+    //   type: 'POST',
+    //   url: 'shareVote',
+    //   dataType: 'json',
+    //   contentType: 'application/json',
+    //   data: JSON.stringify({
+    //     campaignName: 'scott',
+    //     emails: ['patientreferrals2@gmail.com']
+    //   })});
 
     // TODO: Turn this back on later
     // const username = prompt('Username')
@@ -19,8 +27,7 @@ export class Home extends Component {
 
   render() {
     return (
-      <div>
-        Stories
+      <div className="page-container">
         {
           [1,2,3].map(function(i) {
             return (<div className="stories" key={i}>

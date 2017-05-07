@@ -88,22 +88,31 @@ module.exports = function(app) {
   });
 
   app.post('/shareVote', function(req, res) {
+    var options = {
+      uri: 'metrics/campaigns'
+    };
+    client.get(options)
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
     client.transmissions.send({
       options: {
         sandbox: false,
         click_tracking: true,
         open_tracking: true,
+        campaign_id: req.body.campaignName
       },
       content: {
-        from: 'zhang@storyteller.com',
+        from: 'zhang@sillystorystitcher.com',
         subject: 'Hello, World!',
         html:'<html><body><p>Testing SparkPost - the world\'s most awesomest email service!</p></body></html>'
       },
-      recipients: [
-        {address: 'scottzhang235@gmail.com'}
-      ]
+      recipients: req.body.emails.map(function(email) { return { address: email } })
     }).then(function(data) {
-      res.status(200).send('cool')
+      res.status(200).send(data)
     });
   });
 }

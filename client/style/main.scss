@@ -4,8 +4,13 @@ body, .container {
   height: 100%;
 }
 
-.add {
-  height: 100%;
+$navbar-height: 60px;
+.navbar {
+  background-color: red;
+}
+
+.page-container {
+  height: calc(100% - #{navbar-height});
 }
 
 .sidebar {
