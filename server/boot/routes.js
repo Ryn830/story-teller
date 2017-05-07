@@ -11,6 +11,10 @@ var client = new SparkPost('90c369a5fa6897da5ef58c1405bf994b04d94dd3');
 
 module.exports = function(app) {
 
+  app.post('/story', function(req, res) {
+    res.json({status: 'in progress'})
+  })
+
   app.get('/story', function(req, res) {
     var params = {
       TableName: TableName,
@@ -22,11 +26,48 @@ module.exports = function(app) {
     docClient.get(params, function(err, data) {
         if (err) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+            res.json(err)
         } else {
             console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
             res.json(data)
         }
     });
+  })
+
+  app.post('/stories/block', function(req, res) {
+    var obj = {
+      author: req.body.author,
+      pre: req.body.pre,
+      content: req.body.content,
+      post: req.body.post,
+      likes: 0
+    }
+    var params = {
+      TableName: TableName,
+      Key:{
+          id: req.body.id
+      },
+      UpdateExpression: "set #attrName = list_append(#attrName, :obj)",
+      ExpressionAttributeNames : {
+        "#attrName" : "blocks"
+      },
+      ExpressionAttributeValues: {
+        ":obj": [obj]
+      },
+      ReturnValues:"UPDATED_NEW"
+    };
+
+    docClient.update(params, function(err, data) {
+        if (err) {
+            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+            res.json(err)
+        } else {
+            console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+            res.json(data)
+        }
+    });
+
+
   })
 
   app.get('/stories', function(req, res) {
@@ -38,6 +79,7 @@ module.exports = function(app) {
     docClient.scan(params, function(err, data) {
         if (err) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+            res.json(err)
         } else {
             console.log("Scan succeeded:", JSON.stringify(data, null, 2));
             res.json(data)
