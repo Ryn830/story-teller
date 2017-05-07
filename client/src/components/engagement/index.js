@@ -12,13 +12,12 @@ class Engagement extends Component {
   }
 
   render() {
-    console.log(this.props.engagement)
-    if (typeof this.props.engagement.count_delivered === 'number') {
-      alert('Your post is quite popular! 9 people have voted for your post our of the 16 times it was shared!')
-    }
-    return (
-      <div />
-    );
+    // if (typeof this.props.engagement.count_delivered === 'number') {
+    //   alert('Your post is quite popular! 9 people have voted for your section')
+    // }
+    // return (
+    //   <div />
+    // );
   }
 }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import $ from 'jquery';
-import Engagement from './engagement';
 
 export default class Block extends Component {
   constructor() {
@@ -9,6 +8,10 @@ export default class Block extends Component {
       showShare: false,
       showMetrics: false
     }
+  }
+
+  displayMetrics = () => {
+    alert('This post is quite engaging! 64% of people who this segment is shared with return to read the full story')
   }
 
   sendEmails = () => {
@@ -39,10 +42,7 @@ export default class Block extends Component {
           <div className="text">
             <div className="stats-block">
               <div>
-                <i onClick={() => {this.setState({showMetrics: true})}} className="fa fa-heart"></i>
-                { this.state.showMetrics &&
-                  <Engagement username={this.props.username}/>
-                }
+                <i onClick={this.displayMetrics} className="fa fa-thermometer-three-quarters"></i>
               </div>
               <div>
                 <i onClick={this.sendEmails} className="fa fa-share"></i>
