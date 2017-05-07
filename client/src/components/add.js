@@ -19,7 +19,7 @@ class Add extends Component {
           Home
         </Link>
         <br></br>
-        <div>
+        <div className="story">
           {
             this.props.blocks.map((block, index) => {
               return <Block key={ index } text={ block.text }/>
@@ -27,9 +27,7 @@ class Add extends Component {
           }
         </div>
         <br></br>
-        <div>
-          <Form />
-        </div>
+        <Form />
         <Sidebar />
       </div>
     )

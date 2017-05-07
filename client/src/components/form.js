@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux'
 
 import { add_block } from '../actions'
 
+import './form.scss';
+
 class Form extends Component {
   constructor () {
     super();
@@ -23,7 +25,7 @@ class Form extends Component {
   }
   render () {
     return (
-      <form onSubmit={ this.submit.bind(this) }>
+      <form onSubmit={ this.submit.bind(this) } className='form'>
         <label>
           Next Block:
           <input type="text" value={ this.state.text } onChange={ this.update.bind(this) }/>

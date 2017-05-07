@@ -1,22 +1,33 @@
-$sidebarWidth: 300px;
-.sidebar {
-  width: $sidebarWidth;
-  opacity: 0.99;
-}
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+
+$content: 60%;
+$right-bar: 15%;
 
 .block-container {
   z-index: 1;
   position: relative;
+  clear: both;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+
+  .left-bar {
+    flex: .5 0 0;
+  }
 
   .text-container {
-    width: calc(100% - #{$sidebarWidth});
+    padding: 1em;
+    flex: 3 0 0;
   }
 
-  .sidebar-content {
-    position: absolute;
-    width: $sidebarWidth;
-    right: 0;
-    top: 0;
-    z-index: 1;
+  .right-bar {
+    flex: .75 0 0;
+    opacity: 0.99;
   }
+}
+
+.story {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.25em;
 }
