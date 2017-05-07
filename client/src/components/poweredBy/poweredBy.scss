@@ -1,0 +1,52 @@
+.page-container.powered-by {
+
+  .content {
+
+    margin: 0 auto;
+    max-width: 1000px;
+
+    .heading {
+      text-align: center;
+      font-size: 64px;
+      font-weight:bold;
+    }
+
+    .heading-2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .team {
+      text-align: center;
+
+      img {
+        border-radius: 60px;
+        width: 120px;
+        height: 120px;
+      }
+
+      .member {
+        display: inline-block;
+        margin: 25px;
+
+        div {
+          text-align: center;
+        }
+      }
+    }
+
+    .sponsors {
+      text-align: center;
+      img {
+        display: inline;
+        max-width: 600px;
+        max-height: 150px;
+        border: 1px solid #ccc;
+        margin: 5px;
+      }
+    }
+
+  }
+
+}

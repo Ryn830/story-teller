@@ -7,6 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 
 import Home from './components/home';
 import Add from './components/add';
+import PoweredBy from './components/poweredBy';
 import reducers from './reducers';
 
 import '../style/main.scss'
@@ -19,6 +20,7 @@ ReactDOM.render(
     <Router history={ hashHistory }>
       <Route path='/' component={ Home }/>
       <Route path='/add' component={ Add }/>
+      <Route path='/powered-by' component={ PoweredBy }/>
     </Router>
   </Provider>
   , document.querySelector('.container'));
