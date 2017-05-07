@@ -1,0 +1,21 @@
+$sidebarWidth: 300px;
+.sidebar {
+  width: $sidebarWidth;
+  opacity: 0.99;
+}
+
+.block-container {
+  z-index: 1;
+  position: relative;
+
+  .text-container {
+    width: calc(100% - #{$sidebarWidth});
+  }
+  .sidebar-content {
+    position: absolute;
+    width: $sidebarWidth;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+}
