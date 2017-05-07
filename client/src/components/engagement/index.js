@@ -13,13 +13,11 @@ class Engagement extends Component {
 
   render() {
     console.log(this.props.engagement)
+    if (this.props.engagement.count_delivered) {
+      alert(this.props.engagement)
+    }
     return (
-      <div className="engagement">
-        <div>Engagement</div>
-        <div>{this.props.engagement.count_delivered}</div>
-        <div>{this.props.engagement.count_unique_confirmed_opened}</div>
-        <div>{this.props.engagement.count_unique_clicked}</div>
-      </div>
+      <div />
     );
   }
 }
