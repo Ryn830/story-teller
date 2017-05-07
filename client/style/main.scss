@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 html {
   height: 100%;
 }
@@ -8,6 +9,7 @@ body, .container {
   height: 100%;
   display: flex;
   flex-flow: column wrap;
+  font-family: 'Noto Serif', serif;
 }
 
 $navbar-height: 50px;
