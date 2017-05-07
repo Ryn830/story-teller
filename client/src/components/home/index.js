@@ -10,7 +10,7 @@ import './home.scss';
 
 export class Home extends Component {
   componentWillMount() {
-    $.ajax({type: 'POST', url: 'shareVote'});
+    // $.ajax({type: 'POST', url: 'shareVote'});
 
     // TODO: Turn this back on later
     // const username = prompt('Username')

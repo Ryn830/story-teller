@@ -46,14 +46,14 @@ module.exports = function(app) {
   });
 
   app.post('/shareVote', function(req, res) {
-    console.log('WTF')
     client.transmissions.send({
       options: {
+        sandbox: false,
         click_tracking: true,
         open_tracking: true,
       },
       content: {
-        from: 'testing@sparkpostbox.com',
+        from: 'zhang@storyteller.com',
         subject: 'Hello, World!',
         html:'<html><body><p>Testing SparkPost - the world\'s most awesomest email service!</p></body></html>'
       },
