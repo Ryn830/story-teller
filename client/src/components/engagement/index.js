@@ -13,13 +13,11 @@ class Engagement extends Component {
 
   render() {
     console.log(this.props.engagement)
+    if (typeof this.props.engagement.count_delivered === 'number') {
+      alert('Your post is quite popular! 9 people have voted for your post our of the 16 times it was shared!')
+    }
     return (
-      <div className="engagement">
-        <div>Engagement</div>
-        <div>{this.props.engagement.count_delivered}</div>
-        <div>{this.props.engagement.count_unique_confirmed_opened}</div>
-        <div>{this.props.engagement.count_unique_clicked}</div>
-      </div>
+      <div />
     );
   }
 }

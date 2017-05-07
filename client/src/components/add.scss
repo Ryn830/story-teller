@@ -68,8 +68,19 @@ $right-bar: 15%;
       opacity: 0.99;
     }
   }
+
   .story {
     font-size: 1.25em;
   }
 
+  .stats-block {
+    .fa {
+      color: gray;
+      cursor: pointer;
+
+      &:hover {
+        color: #9929c1;
+      }
+    }
+  }
 }

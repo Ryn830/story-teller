@@ -116,7 +116,7 @@ module.exports = function(app) {
       content: {
         from: 'zhang@sillystorystitcher.com',
         subject: 'Vote on this story!',
-        html:'<html><body><p>Testing SparkPost - the world\'s most awesomest email service!</p></body></html>'
+        html:'<html><body><p>www.sillystorystitcher.com/#/add</p></body></html>'
       },
       recipients: req.body.emails.map(function(email) { return { address: email } })
     }).then(function(data) {

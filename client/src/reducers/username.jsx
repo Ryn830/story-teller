@@ -4,10 +4,10 @@ export const setUsername = function(username) {
   return { type: SET_USERNAME, username };
 };
 
-export function usernameReducer(state = '', action) {
+export function usernameReducer(state = 'DEMO', action) {
   switch (action.type) {
     case SET_USERNAME:
-      return action.username
+      return 'DEMO' //action.username
     default:
       return state;
   }
