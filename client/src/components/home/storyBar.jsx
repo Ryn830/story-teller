@@ -13,6 +13,7 @@ export default function StoryBar({ title }) {
   const pattern = GeoPattern.generate(description);
   const dataUrl = pattern.toDataUrl();
   const picStyle = { backgroundImage: dataUrl }
+
   return (<div onClick={goToAdd} className="story-bar">
     <div className="picture" style={picStyle} />
     <div className="bar-header">

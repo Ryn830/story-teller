@@ -5,36 +5,32 @@ import { fetchEngagement } from '../../reducers/engagement';
 import './engagement.scss';
 
 class Engagement extends Component {
-  static propTypes = {
-    getMetrics: PropTypes.func.isRequired,
-    segmentId: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    metrics: PropTypes.object.isRequired,
-  };
-
   componentWillMount() {
     const { getMetrics, username, storyId } = this.props;
 
-    getMetrics(username, storyId);
+    getMetrics(username);
   }
 
   render() {
+    console.log(this.props.engagement)
     return (
       <div className="engagement">
         <div>Engagement</div>
-        <div>12</div>
+        <div>{this.props.engagement.count_delivered}</div>
+        <div>{this.props.engagement.count_unique_confirmed_opened}</div>
+        <div>{this.props.engagement.count_unique_clicked}</div>
       </div>
     );
   }
 }
 
 function mapStateToProps(state, props) {
-  return { engagement: {} };
+  return { engagement: state.engagement };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getMetrics(id) { fetchEngagement(id) },
+    getMetrics(id) { dispatch(fetchEngagement(id)) },
   };
 }
 

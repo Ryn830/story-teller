@@ -12,24 +12,10 @@ import './home.scss';
 
 export class Home extends Component {
   componentWillMount() {
-    // $.post({
-    //   url: 'shareVote',
-    //   dataType: 'json',
-    //   contentType: 'application/json',
-    //   data: JSON.stringify({
-    //     campaignName: 'scott',
-    //     emails: ['patientreferrals2@gmail.com']
-    //   })});
-
     this.props.fetchStories();
-
-    // TODO: Turn this back on later
-    // const username = prompt('Username')
-    // this.props.setUsername(username)
   }
 
   render() {
-    console.log(this.props.stories)
     return (
       <div className="page-container">
         <Navbar />

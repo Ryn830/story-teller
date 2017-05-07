@@ -8,6 +8,7 @@ import Engagement from './engagement';
 import Sidebar from './sidebar';
 import { get_blocks, add_block } from '../actions/index'
 import Navbar from './navbar';
+import { setUsername } from '../reducers/username';
 
 import './add.scss';
 import './form.scss';
@@ -51,6 +52,11 @@ class Add extends Component {
       post: noun + ' ' + hacker.verb() + '...'
     })
   }
+
+  componentWillMount() {
+    this.props.setUsername(Math.floor(Math.random() * 400000))
+  }
+
   render() {
     return (
       <div className="page-container add">
@@ -117,6 +123,6 @@ export default connect(
     }
   },
   (dispatch) => {
-    return bindActionCreators({ get_blocks, add_block }, dispatch)
+    return bindActionCreators({ get_blocks, add_block, setUsername }, dispatch)
   }
 )(Add)

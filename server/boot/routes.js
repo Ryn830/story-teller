@@ -90,10 +90,11 @@ module.exports = function(app) {
   });
 
   app.get('/commentMetrics', function(req, res) {
+    var campaign = req.query.campaign;
     var options = {
       uri: 'metrics/deliverability?from=2016-07-11T08:00&to=2017-07-20T09:00' +
       '&metrics=count_delivered,count_unique_confirmed_opened,count_unique_clicked' +
-      '&campaigns=scott'
+      '&campaigns=' + campaign
     };
     client.get(options)
     .then(data => {
