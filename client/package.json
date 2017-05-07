@@ -6,6 +6,7 @@
   "repository": "git@github.com:Ryn830/story-teller.git",
   "scripts": {
     "start": "webpack -w --config webpack.config.js",
+    "build": "webpack --config webpack.prod.config.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
