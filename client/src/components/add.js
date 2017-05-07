@@ -19,6 +19,7 @@ class Add extends Component {
           Home
         </Link>
         <br></br>
+        <h3 className='block-title'>Story Title</h3>
         <div className="story">
           {
             this.props.blocks.map((block, index) => {
