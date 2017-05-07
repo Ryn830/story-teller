@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { setUsername as set } from '../../reducers/username';
 import StoryBar from './StoryBar'
+import Navbar from '../navbar';
 
 import $ from 'jquery';
 import './home.scss';
@@ -29,6 +30,7 @@ export class Home extends Component {
   render() {
     return (
       <div className="page-container">
+        <Navbar />
         {
           [1,2,3].map(function(i) {
             return (<div className="stories" key={i}>

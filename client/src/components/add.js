@@ -8,6 +8,7 @@ import Engagement from './engagement';
 import Form from './form'
 import Sidebar from './sidebar';
 import { get_blocks } from '../actions/index'
+import Navbar from './navbar';
 
 import './add.scss';
 
@@ -15,9 +16,7 @@ class Add extends Component {
   render() {
     return (
       <div className="page-container add">
-        <Link to='/'>
-          Home
-        </Link>
+        <Navbar />
         <br></br>
         <h3 className='block-title'>Story Title</h3>
         <div className="story">
