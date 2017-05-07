@@ -5,3 +5,10 @@ export function get_blocks () {
     type: types.GET_BLOCKS
   }
 }
+
+export function add_block (block) {
+  return {
+    type: types.ADD_BLOCK,
+    block
+  }
+}
