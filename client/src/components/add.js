@@ -21,7 +21,7 @@ class Add extends Component {
         <div className="story">
           {
             this.props.blocks.map((block, index) => {
-              return <Block key={ index } text={ block.text } username={ this.props.username }/>
+              return <Block key={ index } pre={ block.pre } content={ block.content } post={ block.post } username={ this.props.username }/>
             })
           }
         </div>
