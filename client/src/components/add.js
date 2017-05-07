@@ -5,7 +5,6 @@ import { hacker } from 'faker'
 
 import Block from './block';
 import Engagement from './engagement';
-import Form from './form'
 import Sidebar from './sidebar';
 import { get_blocks, add_block } from '../actions/index'
 import Navbar from './navbar';
@@ -65,9 +64,8 @@ class Add extends Component {
             })
           }
         </div>
-        <br></br>
         <div className='story'>
-        <div className="block-container">
+          <div className="block-container">
           <div className="left-bar"></div>
           <div className="text-container">
             { this.state.pre } { this.state.content } { this.state.post }
@@ -76,7 +74,7 @@ class Add extends Component {
           </div>
         </div>
         <div className='form'>
-        <div className='left'></div>
+          <div className='left'></div>
           <form onSubmit={ this.submit.bind(this) } className='form-group'>
             <div>
               <div>
