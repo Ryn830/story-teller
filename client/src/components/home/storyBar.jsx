@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
+import { hashHistory } from 'react-router';
+
+import loremIpsum from 'lorem-ipsum';
+import GeoPattern from 'geopattern';
 
 export default function StoryBar({ title }) {
-  return (<div to='/add' className="story-bar">
+  function goToAdd() {
+    hashHistory.push('/add');
+  }
+
+  const description = loremIpsum({count: 2, units: 'sentences'});
+  const pattern = GeoPattern.generate(description);
+  const dataUrl = pattern.toDataUrl();
+  const picStyle = { backgroundImage: dataUrl }
+  return (<div onClick={goToAdd} className="story-bar">
+    <div className="picture" style={picStyle} />
     <div className="bar-header">
-      <div className="picture" />
       <div className="story-title">{ title }</div>
-    </div>
-    <div>
-      HERE IS A TITLE THAT IS QUITE LONG AT TIMES BUT CAN BE SHORTER
+      <div className="description">
+        { description }
+      </div>
     </div>
   </div>)
 }

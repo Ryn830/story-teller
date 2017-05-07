@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
@@ -41,9 +40,6 @@ export class Home extends Component {
             })
           }
         </div>
-        <Link to='add'>
-          Add a story
-        </Link>
       </div>
     );
   }
