@@ -21,6 +21,7 @@
     "chai": "^3.5.0",
     "chai-jquery": "^2.0.0",
     "css-loader": "^0.28.1",
+    "faker": "^4.1.0",
     "geopattern": "^1.2.3",
     "jquery": "^2.2.1",
     "jsdom": "^8.1.0",
