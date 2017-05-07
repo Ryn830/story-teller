@@ -11,6 +11,7 @@ $sidebarWidth: 300px;
   .text-container {
     width: calc(100% - #{$sidebarWidth});
   }
+
   .sidebar-content {
     position: absolute;
     width: $sidebarWidth;

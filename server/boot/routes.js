@@ -36,7 +36,7 @@ module.exports = function(app) {
   app.get('/story', function(req, res) {
     var params = {
       TableName: TableName,
-      Key:{
+      Key: {
           id: req.query.id
       }
     };

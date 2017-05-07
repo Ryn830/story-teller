@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 import { connect } from 'react-redux';
 
-import { setUsername as set } from '../reducers/username';
+import { setUsername as set } from '../../reducers/username';
+import StoryBar from './StoryBar'
+
+import './home.scss';
 
 export class Home extends Component {
   componentWillMount() {
@@ -15,8 +18,15 @@ export class Home extends Component {
     return (
       <div>
         Stories
-        - A list of stories goes here
-        <br></br>
+        {
+          [1,2,3].map(function(i) {
+            return (<div className="stories" key={i}>
+              <StoryBar />
+              <StoryBar />
+              <StoryBar />
+            </div>);
+          })
+        }
         <Link to='add'>
           Add a story
         </Link>
