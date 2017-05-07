@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { setUsername } from '../../reducers/username';
 import { fetchStories } from '../../reducers/stories';
-import StoryBar from './StoryBar'
+import StoryBar from './storyBar'
 import Navbar from '../navbar';
 
 import $ from 'jquery';
