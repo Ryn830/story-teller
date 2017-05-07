@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 
-import { setUsername as set } from '../../reducers/username';
+import { setUsername } from '../../reducers/username';
+import { fetchStories } from '../../reducers/stories';
 import StoryBar from './StoryBar'
 import Navbar from '../navbar';
 
@@ -20,7 +22,7 @@ export class Home extends Component {
     //     emails: ['patientreferrals2@gmail.com']
     //   })});
 
-    $.get({url: 'commentMetrics', dataType: 'json', contentType: 'application/json'})
+    this.props.fetchStories();
 
     // TODO: Turn this back on later
     // const username = prompt('Username')
@@ -28,18 +30,17 @@ export class Home extends Component {
   }
 
   render() {
+    console.log(this.props.stories)
     return (
       <div className="page-container">
         <Navbar />
-        {
-          [1,2,3].map(function(i) {
-            return (<div className="stories" key={i}>
-              <StoryBar />
-              <StoryBar />
-              <StoryBar />
-            </div>);
-          })
-        }
+        <div className="stories">
+          {
+            this.props.stories && this.props.stories.map(function(story, i) {
+              return (<StoryBar title={story.title} key={i} />);
+            })
+          }
+        </div>
         <Link to='add'>
           Add a story
         </Link>
@@ -49,11 +50,11 @@ export class Home extends Component {
 }
 
 function mapStateToProps(state, props) {
-  return {};
+  return { stories: state.stories };
 }
 
 function mapDispatchToProps(dispatch) {
-  return { setUsername(name) { dispatch(set(name)) } };
+  return bindActionCreators({ fetchStories, setUsername }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

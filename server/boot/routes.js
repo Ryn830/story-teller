@@ -114,7 +114,7 @@ module.exports = function(app) {
       campaign_id: req.body.campaignName,
       content: {
         from: 'zhang@sillystorystitcher.com',
-        subject: 'Hello, World!',
+        subject: 'Vote on this story!',
         html:'<html><body><p>Testing SparkPost - the world\'s most awesomest email service!</p></body></html>'
       },
       recipients: req.body.emails.map(function(email) { return { address: email } })
