@@ -5,37 +5,16 @@ AWS.config.update(credentials)
 
 var docClient = new AWS.DynamoDB.DocumentClient()
 var TableName = 'write-with-friends'
-var params = {
-  TableName: TableName,
-  Item: {
-    id: 'hello-world',
-    data: 'other stuff'
-  }
-}
 
 var SparkPost = require('sparkpost');
 var client = new SparkPost('90c369a5fa6897da5ef58c1405bf994b04d94dd3');
 
 module.exports = function(app) {
-  // Install a "/ping" route that returns "pong"
-  app.get('/ping', function(req, res) {
-    docClient.put(params, function(err, data) {
-        if (err) {
-            console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("Added item:", JSON.stringify(data, null, 2));
-        }
-    });
-
-    res.json({
-      data: 'pong'
-    });
-  });
 
   app.get('/story', function(req, res) {
     var params = {
       TableName: TableName,
-      Key: {
+      Key:{
           id: req.query.id
       }
     };
@@ -45,6 +24,22 @@ module.exports = function(app) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
             console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+            res.json(data)
+        }
+    });
+  })
+
+  app.get('/stories', function(req, res) {
+    var params = {
+      TableName: TableName,
+      ProjectionExpression: 'title, authors, followers, likes'
+    };
+
+    docClient.scan(params, function(err, data) {
+        if (err) {
+            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("Scan succeeded:", JSON.stringify(data, null, 2));
             res.json(data)
         }
     });
