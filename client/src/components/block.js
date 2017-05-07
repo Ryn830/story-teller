@@ -7,7 +7,11 @@ export default function Block({ text }) {
       <div className="text-container">
         { text }
       </div>
-      <div className="right-bar">Stats</div>
+      <div className="right-bar">
+        <div className="text">
+          Stats
+        </div>
+      </div>
     </div>
   )
 }

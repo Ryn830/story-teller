@@ -8,8 +8,8 @@ $right-bar: 15%;
   position: relative;
   clear: both;
   display: flex;
-  flex-flow: row;
-  align-items: center;
+  flex-flow: row nowrap;
+  align-self: center;
   justify-content: center;
 
   .left-bar {
@@ -22,7 +22,11 @@ $right-bar: 15%;
   }
 
   .right-bar {
+    display: flex;
+    flex-flow: row nowrap;
     flex: .75 0 0;
+    align-self: center;
+    justify-content: center;
     opacity: 0.99;
   }
 }
