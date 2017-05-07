@@ -56,7 +56,16 @@ class Add extends Component {
       <div className="page-container add">
         <Navbar />
         <br></br>
-        <h3 className='block-title'>Story Title</h3>
+        <div className="header">
+          <div className='block-title'>The Next Silicon Valley</div>
+          <div className="author">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/005/013/259/15145de.jpg"/>
+            <div className="info">
+              Scott Zhang
+            </div>
+          </div>
+        </div>
+        <div className="cover"></div>
         <div className="story">
           {
             this.props.blocks.map((block, index) => {
