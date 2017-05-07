@@ -9,6 +9,8 @@ var TableName = 'write-with-friends'
 var SparkPost = require('sparkpost');
 var client = new SparkPost('90c369a5fa6897da5ef58c1405bf994b04d94dd3');
 
+var qs = require('querystring');
+
 module.exports = function(app) {
 
   app.post('/story', function(req, res) {
@@ -87,24 +89,29 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/shareVote', function(req, res) {
+  app.get('/commentMetrics', function(req, res) {
     var options = {
-      uri: 'metrics/campaigns'
+      uri: 'metrics/deliverability?from=2016-07-11T08:00&to=2017-07-20T09:00' +
+      '&metrics=count_delivered,count_unique_confirmed_opened,count_unique_clicked' +
+      '&campaigns=scott'
     };
     client.get(options)
     .then(data => {
-      console.log(data);
+      res.status(200).send(data.results);
     })
     .catch(err => {
       console.log(err);
     });
+  });
+
+  app.post('/shareVote', function(req, res) {
     client.transmissions.send({
       options: {
         sandbox: false,
         click_tracking: true,
         open_tracking: true,
-        campaign_id: req.body.campaignName
       },
+      campaign_id: req.body.campaignName,
       content: {
         from: 'zhang@sillystorystitcher.com',
         subject: 'Hello, World!',

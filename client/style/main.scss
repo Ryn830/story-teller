@@ -4,16 +4,16 @@ html {
 
 body, .container {
   margin: 0 auto;
-  padding: .25em;
   width: 100%;
   height: 100%;
   display: flex;
   flex-flow: column wrap;
 }
 
-$navbar-height: 60px;
+$navbar-height: 50px;
 .navbar {
   background-color: red;
+  height: $navbar-height;
 }
 
 .page-container {

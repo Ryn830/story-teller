@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { setUsername as set } from '../../reducers/username';
 import StoryBar from './StoryBar'
+import Navbar from '../navbar';
 
 import $ from 'jquery';
 import './home.scss';
@@ -11,7 +12,6 @@ import './home.scss';
 export class Home extends Component {
   componentWillMount() {
     // $.post({
-    //   type: 'POST',
     //   url: 'shareVote',
     //   dataType: 'json',
     //   contentType: 'application/json',
@@ -19,6 +19,8 @@ export class Home extends Component {
     //     campaignName: 'scott',
     //     emails: ['patientreferrals2@gmail.com']
     //   })});
+
+    $.get({url: 'commentMetrics', dataType: 'json', contentType: 'application/json'})
 
     // TODO: Turn this back on later
     // const username = prompt('Username')
@@ -28,6 +30,7 @@ export class Home extends Component {
   render() {
     return (
       <div className="page-container">
+        <Navbar />
         {
           [1,2,3].map(function(i) {
             return (<div className="stories" key={i}>
