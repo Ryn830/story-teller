@@ -10,6 +10,10 @@ export default function Block({ pre, content, post, username }) {
       <div className="right-bar">
         <div className="text">
           Stats
+          <div className="stats-block">
+            <i className="fa fa-heart"></i>
+            <i className="fa fa-heart"></i>
+          </div>
         </div>
       </div>
     </div>
