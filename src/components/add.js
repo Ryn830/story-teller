@@ -3,10 +3,13 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import Block from './block';
 import Engagement from './engagement';
 import Form from './form'
 import Sidebar from './sidebar';
 import { get_blocks } from '../actions/index'
+
+import './add.scss';
 
 class Add extends Component {
   render() {
@@ -18,7 +21,7 @@ class Add extends Component {
         <div>
           {
             this.props.blocks.map((block, index) => {
-              return <div key={ index }>{ block.text }</div>
+              return <Block key={ index } text={block.text} />
             })
           }
         </div>
