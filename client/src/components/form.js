@@ -41,16 +41,31 @@ class Form extends Component {
         <div className='left'></div>
         <div className='form-group'>
           <div>
-            <div>Pre:</div>
-            <textarea value={ this.state.pre } onChange={ this.updatePre.bind(this) }></textarea>
+            <textarea
+              cols="50"
+              rows="3"
+              value={ this.state.pre }
+              onChange={ this.updatePre.bind(this) }
+              placeholder='Complete the sentence from the previous story.'
+            ></textarea>
           </div>
           <div>
-            <div>Content:</div>
-            <textarea value={ this.state.content } onChange={ this.updateContent.bind(this) }></textarea>
+            <textarea
+              cols="50"
+              rows="3"
+              value={ this.state.content }
+              onChange={ this.updateContent.bind(this) }
+              placeholder='What direction do you want to move the story in?'
+            ></textarea>
           </div>
           <div>
-            <div>Post:</div>
-            <textarea value={ this.state.post } onChange={ this.updatePost.bind(this) }></textarea>
+            <textarea
+              cols="50"
+              rows="3"
+              value={ this.state.post }
+              onChange={ this.updatePost.bind(this) }
+              placeholder='Now leave a sentence to be completed.'
+            ></textarea>
           </div>
           <input type="submit" value="Submit" />
         </div>
