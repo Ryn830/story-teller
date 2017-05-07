@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-export default function StoryBar({}) {
-  return (<div className="story-bar">
+export default function StoryBar({ router }) {
+  return (<div to='/add' className="story-bar">
     <div className="bar-header">
       <div className="picture" />
       <div className="story-title">HERE ARE THE METRICS</div>

@@ -20,6 +20,7 @@
     "loopback-component-explorer": "^4.0.0",
     "nodemon": "^1.11.0",
     "serve-favicon": "^2.0.1",
+    "sparkpost": "^2.1.2",
     "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {

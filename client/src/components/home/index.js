@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 import { setUsername as set } from '../../reducers/username';
 import StoryBar from './StoryBar'
 
+import $ from 'jquery';
 import './home.scss';
 
 export class Home extends Component {
   componentWillMount() {
+    $.ajax({type: 'POST', url: 'shareVote'});
+
     // TODO: Turn this back on later
     // const username = prompt('Username')
     // this.props.setUsername(username)
