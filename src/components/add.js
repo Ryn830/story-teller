@@ -18,13 +18,15 @@ class Add extends Component {
         <Link to='/'>
           Home
         </Link>
+        <br></br>
         <div>
           {
             this.props.blocks.map((block, index) => {
-              return <Block key={ index } text={block.text} />
+              return <Block key={ index } text={ block.text }/>
             })
           }
         </div>
+        <br></br>
         <div>
           <Form />
         </div>
