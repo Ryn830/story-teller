@@ -72,40 +72,39 @@ class Add extends Component {
           </div>
         </div>
         <div className="cover"></div>
-        <div className="story">
-          {
-            this.props.blocks.map((block, index) => {
-              return <Block key={ index } pre={ block.pre } content={ block.content } post={ block.post } username={ this.props.username }/>
-            })
-          }
-        </div>
-        <div className='story'>
-          <div className="block-container">
-          <div className="left-bar"></div>
-          <div className="text-container">
-            { this.state.pre } { this.state.content } { this.state.post }
+        <div className="story-container">
+          <div className="story">
+            {
+              this.props.blocks.map((block, index) => {
+                return <Block key={ index } pre={ block.pre } content={ block.content } post={ block.post } username={ this.props.username }/>
+              })
+            }
           </div>
-          <div className="right-bar"></div>
-          </div>
-        </div>
-        <div className='form'>
-          <div className='left'></div>
-          <form onSubmit={ this.submit.bind(this) } className='form-group'>
-            <div>
-              <div>
-                <textarea cols="50" rows="3" value={ this.state.pre } onChange={ this.updatePre.bind(this) } placeholder='Complete the sentence from the previous story.'></textarea>
-              </div>
-              <div>
-                <textarea cols="50" rows="3" value={ this.state.content } onChange={ this.updateContent.bind(this) } placeholder='What direction do you want to move the story in?'></textarea>
-              </div>
-              <div>
-                <textarea cols="50" rows="3" value={ this.state.post } onChange={ this.updatePost.bind(this) } placeholder='Now leave a sentence to be completed.'></textarea>
-              </div>
-              <input type="submit" value="Submit" />
-              <button onClick={(e) => { this.generate(e) }}>Generate Random Responses</button>
+          <div className='story'>
+            <div className="block-container">
+            <div className="text-container">
+              { this.state.pre } { this.state.content } { this.state.post }
             </div>
-          </form>
-          <div className='right'></div>
+            <div className="right-bar"></div>
+            </div>
+          </div>
+          <div className='form'>
+            <form onSubmit={ this.submit.bind(this) } className='form-group'>
+              <div>
+                <div>
+                  <textarea cols="50" rows="3" value={ this.state.pre } onChange={ this.updatePre.bind(this) } placeholder='Complete the sentence from the previous story.'></textarea>
+                </div>
+                <div>
+                  <textarea cols="50" rows="3" value={ this.state.content } onChange={ this.updateContent.bind(this) } placeholder='What direction do you want to move the story in?'></textarea>
+                </div>
+                <div>
+                  <textarea cols="50" rows="3" value={ this.state.post } onChange={ this.updatePost.bind(this) } placeholder='Now leave a sentence to be completed.'></textarea>
+                </div>
+                <input type="submit" value="Submit" />
+                <button onClick={(e) => { this.generate(e) }}>Generate Random Responses</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     )

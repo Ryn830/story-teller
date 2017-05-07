@@ -14,6 +14,8 @@ $right-bar: 15%;
   }
 
   .author {
+    display: flex;
+    align-items: center;
     img {
       width: 60px;
       height: 60px;
@@ -22,6 +24,7 @@ $right-bar: 15%;
 
     .info {
       display: inline-block;
+      margin-left: 7px;
     }
   }
 }
@@ -34,34 +37,39 @@ $right-bar: 15%;
   background-size: cover;
   background-position: center;
 }
+.story-container {
+  max-width: 700px;
+  margin: 0 auto;
 
-.block-container {
-  z-index: 1;
-  position: relative;
-  clear: both;
-  display: flex;
-  flex-flow: row nowrap;
-  align-self: center;
-  justify-content: center;
-
-  .left-bar {
-    flex: .5 0 0;
-  }
-
-  .text-container {
-    padding: 1em;
-    flex: 3 0 0;
-  }
-
-  .right-bar {
+  .block-container {
+    z-index: 1;
+    position: relative;
+    clear: both;
     display: flex;
     flex-flow: row nowrap;
-    flex: .75 0 0;
     align-self: center;
     justify-content: center;
-    opacity: 0.99;
+
+    .left-bar {
+      flex: .5 0 0;
+    }
+
+    .text-container {
+      padding: 1em 0;
+      flex: 3 0 0;
+    }
+
+    .right-bar {
+      display: flex;
+      flex-flow: row nowrap;
+      flex: .75 0 0;
+      align-self: center;
+      justify-content: center;
+      opacity: 0.99;
+    }
   }
-}
-.story {
-  font-size: 1.25em;
+  .story {
+    font-size: 1.25em;
+  }
+
 }

@@ -32,7 +32,6 @@ export default class Block extends Component {
 
     return (
       <div className="block-container">
-        <div className="left-bar"></div>
         <div className="text-container">
           { pre } { content } { post }
         </div>
